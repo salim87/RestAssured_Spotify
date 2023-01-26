@@ -18,7 +18,15 @@ public class SpecBuilder {
                 .build();
 
     }
-
+    public static RequestSpecification getAccountRequestSpec(){
+        return new RequestSpecBuilder().
+                setBaseUri(System.getProperty("ACCOUNT_BASE_URI")).
+                //            setBaseUri("https://accounts.spotify.com").
+                        setContentType(ContentType.URLENC).
+           //     addFilter(new AllureRestAssured()).
+                log(LogDetail.ALL).
+                build();
+    }
 
     public static ResponseSpecification getResponseSpecBuilder(){
 
